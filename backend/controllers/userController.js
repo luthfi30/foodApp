@@ -1,6 +1,6 @@
 import userModel from "../models/userModel.js";
 import jwt from "jsonwebtoken";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs"; // Mengganti bcrypt dengan bcryptjs
 import validator from "validator";
 
 const loginUser = async (req, res) => {
@@ -44,9 +44,8 @@ const registerUser = async (req, res) => {
       return res.json({ success: false, message: "Password is too short" });
     }
 
-    //hashing password
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(password, salt);
+    //hashing password using bcryptjs
+    const hashedPassword = await bcrypt.hash(password, 10); // 10 adalah jumlah rounds salt (opsional)
     const newUser = new userModel({ name, email, password: hashedPassword });
     const user = await newUser.save();
     const token = createToken(user._id);
