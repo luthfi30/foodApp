@@ -48,17 +48,19 @@
 }
 
 .food-item-img-container .add {
+  margin-top: 50%;
   margin-left: 85%;
   position: absolute;
-  width: 35px;
+  width: 30px;
   cursor: pointer;
   border-radius: 50%;
+  box-shadow: #707570b9 0px 0px 2px;
 }
 
 .food-item-counter {
   margin-left: 65%;
   position: absolute;
-
+  margin-top: 50%;
   display: flex;
   align-items: center;
   gap: 10px;
