@@ -12,7 +12,7 @@ const app = express();
 const port = process.env.PORT || 4000;
 
 const corsOptions = {
-  origin: "https://food-app-sable-pi.vercel.app", // Ganti dengan asal permintaan React.js Anda
+  origin: "*", // Ganti dengan asal permintaan React.js Anda
   methods: ["GET", "POST", "PUT", "DELETE"],
   optionsSuccessStatus: 200,
 };
