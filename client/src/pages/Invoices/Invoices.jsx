@@ -41,10 +41,11 @@ const Invoices = () => {
                 {item.name} x {item.quantity}
               </p>
               <p>{rupiah(item.price * item.quantity)}</p>
-              <p>Delivery fee Rp 12.000</p>
+             
               
             </div>
           ))}
+           <p>Delivery fee Rp 12.000</p>
         </div>
         <hr />
         <div className="invoice-summary-address">
