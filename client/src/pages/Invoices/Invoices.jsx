@@ -45,7 +45,10 @@ const Invoices = () => {
               
             </div>
           ))}
-           <p>Delivery fee Rp 12.000</p>
+           <div className="invoice-item">
+           <p>Delivery fee </p>
+            <p>Rp 12.000</p>
+            </div>
         </div>
         <hr />
         <div className="invoice-summary-address">
