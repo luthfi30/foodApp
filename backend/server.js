@@ -22,7 +22,7 @@ connectDB();
 
 //api endpoints
 app.use("/api/food", foodRouter);
-// app.use("/images", express.static("uploads"));
+app.use("/images", express.static("uploads"));
 app.use("/api/user", userRouter);
 app.use("/api/cart", cartRouter);
 app.use("/api/order", orderRouter);
@@ -34,5 +34,3 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
   console.log(`Server running on port http://localhost:${port}`);
 });
-
-// mongodb+srv://<username>:<password>@mymongodb.ekopuki.mongodb.net/?retryWrites=true&w=majority&appName=mymongodb
