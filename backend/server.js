@@ -11,7 +11,13 @@ import "dotenv/config";
 const app = express();
 const port = process.env.PORT || 4000;
 
-app.use(cors());
+const corsOptions = {
+  origin: ["https://food-app-sable-pi.vercel.app/", "http://localhost:5173"], // Ganti dengan asal permintaan React.js Anda
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 
 //middlewares
 
