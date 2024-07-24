@@ -1,5 +1,5 @@
 import express from "express";
-import cors from "cors";
+const cors = require("cors");
 import connectDB from "./config/db.js";
 import foodRouter from "./routes/foodRoute.js";
 import userRouter from "./routes/userRoute.js";
@@ -11,11 +11,11 @@ import "dotenv/config";
 const app = express();
 const port = process.env.PORT || 4000;
 
-// const corsOptions = {
-//   origin: "https://food-app-sable-pi.vercel.app", // Ganti dengan asal permintaan React.js Anda
-//   methods: ["GET", "POST", "PUT", "DELETE"],
-//   optionsSuccessStatus: 200,
-// };
+const corsOptions = {
+  origin: ["https://food-app-sable-pi.vercel.app"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  optionsSuccessStatus: 200,
+};
 
 app.use(cors());
 
