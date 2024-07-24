@@ -25,7 +25,12 @@
 p.status {
   color: red;
 }
+invoice-summary-address{
+display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
 
+}
 .invoice-summary {
   margin-bottom: 20px;
 }
