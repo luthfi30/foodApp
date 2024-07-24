@@ -48,7 +48,7 @@
 }
 
 .food-item-img-container .add {
-  margin-top: 50%;
+  margin-top: 40%;
   margin-left: 85%;
   position: absolute;
   width: 30px;
@@ -60,7 +60,7 @@
 .food-item-counter {
   margin-left: 65%;
   position: absolute;
-  margin-top: 50%;
+  margin-top: 40%;
   display: flex;
   align-items: center;
   gap: 10px;
