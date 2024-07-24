@@ -7,18 +7,11 @@ import cartRouter from "./routes/cartRoute.js";
 import orderRouter from "./routes/orderRoute.js";
 import "dotenv/config";
 
-
 //app config
 const app = express();
 const port = process.env.PORT || 4000;
 
-const corsOptions = {
-  origin: "https://food-app-sable-pi.vercel.app",
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-  optionsSuccessStatus: 200,
-};
-app.use(cors(corsOptions));
+app.use(cors());
 
 //middlewares
 
