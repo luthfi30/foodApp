@@ -41,6 +41,8 @@ const Invoices = () => {
                 {item.name} x {item.quantity}
               </p>
               <p>{rupiah(item.price * item.quantity)}</p>
+              <p>Delivery fee Rp 12.000</p>
+              
             </div>
           ))}
         </div>
