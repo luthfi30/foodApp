@@ -13,7 +13,7 @@ const app = express();
 const port = process.env.PORT || 4000;
 
 const corsOptions = {
-  origin: "*",
+  origin: "https://food-app-sable-pi.vercel.app",
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
   optionsSuccessStatus: 200,
