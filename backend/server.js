@@ -12,12 +12,12 @@ const app = express();
 const port = process.env.PORT || 4000;
 
 const corsOptions = {
-  origin: ["https://food-app-sable-pi.vercel.app"],
+  origin: ["https://food-app-sable-pi.vercel.app", "http://localhost:5173"],
   methods: ["GET", "POST", "PUT", "DELETE"],
   optionsSuccessStatus: 200,
 };
 
-app.use(cors());
+app.use(cors(corsOptions));
 
 //middlewares
 
