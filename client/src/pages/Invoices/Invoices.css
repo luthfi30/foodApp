@@ -1,0 +1,43 @@
+.invoice {
+  padding: 20px;
+}
+
+.invoice h2 {
+  margin-bottom: 20px;
+}
+
+.invoice-details {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.invoice-items {
+  margin-bottom: 20px;
+}
+
+.invoice-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+
+p.status {
+  color: red;
+}
+
+.invoice-summary {
+  margin-bottom: 20px;
+}
+
+.invoice-address {
+  margin-top: 20px;
+}
+
+.invoice-address h3 {
+  margin-bottom: 10px;
+}
+
+.invoice-address p {
+  margin: 5px 0;
+}
