@@ -25,58 +25,64 @@ const Invoices = () => {
   }, [token, id]);
 
   if (!order) {
-    return <div>Loading...</div>;
+    return <div className="invoice">Loading...</div>;
   }
 
-  const { address } = order; // Mendapatkan data alamat dari order
+  const { address, items, amount, status, date, payment } = order; // Destructure data order
 
   return (
     <div className="invoice">
-      <h3>Invoice ID: #{order._id}</h3>
+      <div className="invoice-address">
+        <h3>Invoice ID: #{order._id}</h3>
+
+        <p>
+          <b>Street:</b> {address.address}
+        </p>
+        <p>
+          <b>City:</b> {address.city}
+        </p>
+        <p>
+          <b>Phone:</b> {address.phone}
+        </p>
+        <p>
+          <b>Zip Code:</b> {address.zip}
+        </p>
+      </div>
+
       <div className="invoice-content">
-        <div className="invoice-items">
-          {order.items.map((item, index) => (
-            <div key={index} className="invoice-item">
-              <p>
-                {item.name} x {item.quantity}
-              </p>
-              <p>{rupiah(item.price * item.quantity)}</p>
-            </div>
-          ))}
-        </div>
-        <hr />
-        <div className="invoice-summary-address">
-          <div className="invoice-summary">
-            <p>
-              <b>Total Amount:</b> {rupiah(order.amount)}
-            </p>
-            <p>
-              <b>Status:</b> {order.status}
-            </p>
-            <p>
-              <b>Order Date:</b> {new Date(order.date).toLocaleDateString()}
-            </p>
-            <p>
-              <b>Payment Status:</b>
-              {order.payment ? "Paid" : "Unpaid"}
-            </p>
-          </div>
-          <hr />
-          <div className="invoice-address">
-            <h3>Shipping Address</h3>
-            <p>
-              <b>Street:</b> {address.address}
-            </p>
-            <p>
-              <b>City:</b> {address.city}
-            </p>
-            <p>
-              <b>Phone:</b> {address.phone}
-            </p>
-            <p>
-              <b>Zip Code:</b> {address.zip}
-            </p>
-          </div>
+        <table className="invoice-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Quantity</th>
+              <th>Item Price</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            {items.map((item, index) => (
+              <tr key={index}>
+                <td>{item.name}</td>
+                <td>{item.quantity}</td>
+                <td>{rupiah(item.price)}</td>
+                <td>{rupiah(item.price * item.quantity)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <div className="invoice-summary">
+          <p>
+            <b>Total Amount :</b>
+            <span>{rupiah(amount)}</span>
+          </p>
+          <p>
+            <b>Status :</b>
+            <span>{status}</span>
+          </p>
+          <p>
+            <b>Payment Status:</b>
+            <span>{payment ? "Paid" : "Unpaid"}</span>
+          </p>
         </div>
       </div>
     </div>
