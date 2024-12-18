@@ -48,7 +48,11 @@
 }
 
 .food-item-img-container .add {
+<<<<<<< HEAD
   margin-top: 50%;
+=======
+  margin-top: 40%;
+>>>>>>> 5bf7e30738d8df2c5e82224a2bdab6dab9bc56ea
   margin-left: 85%;
   position: absolute;
   width: 30px;
@@ -60,7 +64,11 @@
 .food-item-counter {
   margin-left: 65%;
   position: absolute;
+<<<<<<< HEAD
   margin-top: 50%;
+=======
+  margin-top: 40%;
+>>>>>>> 5bf7e30738d8df2c5e82224a2bdab6dab9bc56ea
   display: flex;
   align-items: center;
   gap: 10px;
