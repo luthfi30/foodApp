@@ -4,18 +4,10 @@ import { assets } from "../../assets/assets";
 import { StoreContext } from "../../context/StoreContext";
 const FoodItem = ({ id, name, price, description, image }) => {
   const { cartItems, addToCart, removeFromCart, rupiah, url } = useContext(StoreContext);
-    
+
   return (
     <div className="food-item">
-<<<<<<< HEAD
       <img className="food-item-image" src={url + "/assets/" + image} alt="" />
-=======
-        <img
-        className="food-item-image"
-        src={image} // Menggunakan key image dari props
-        alt={name}
-      />
->>>>>>> 5bf7e30738d8df2c5e82224a2bdab6dab9bc56ea
       <div className="food-item-img-container">
         {!cartItems?.[id] ? (
           <img className="add" onClick={() => addToCart(id)} src={assets.add_icon_white} alt="" />
