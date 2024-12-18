@@ -4,10 +4,12 @@ import { assets } from "../../assets/assets";
 import { StoreContext } from "../../context/StoreContext";
 const FoodItem = ({ id, name, price, description, image }) => {
   const { cartItems, addToCart, removeFromCart, rupiah, url } = useContext(StoreContext);
-    const foodImage = assets[image]; 
+    
   return (
     <div className="food-item">
-       <img className="food-item-image" src={foodImage} alt={name} />
+       console.log(`assets/${image}`);  // Melihat path yang digunakan
+<img className="food-item-image" src={`/assets/${image}`} alt={name} />
+
       <div className="food-item-img-container">
         {!cartItems?.[id] ? (
           <img className="add" onClick={() => addToCart(id)} src={assets.add_icon_white} alt="" />
