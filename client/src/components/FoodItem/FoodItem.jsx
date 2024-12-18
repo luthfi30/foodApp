@@ -7,6 +7,7 @@ const FoodItem = ({ id, name, price, description, image }) => {
 
   return (
     <div className="food-item">
+      {console.log(`assets/${image}`); };
       <img className="food-item-image" src={`assets/${image}`} alt={name} />
       <div className="food-item-img-container">
         {!cartItems?.[id] ? (
