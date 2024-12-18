@@ -9,7 +9,7 @@ import "dotenv/config";
 
 //app config
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 5000;
 
 // const corsOptions = {
 //   origin: "https://food-app-sable-pi.vercel.app", // Ganti dengan asal permintaan React.js Anda
@@ -28,7 +28,7 @@ connectDB();
 
 //api endpoints
 app.use("/api/food", foodRouter);
-// app.use("/images", express.static("uploads"));
+app.use("/images", express.static("uploads"));
 app.use("/api/user", userRouter);
 app.use("/api/cart", cartRouter);
 app.use("/api/order", orderRouter);
@@ -38,5 +38,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server running on port http://localhost:${port}`);
+  console.log(`Server running on ${connectDB()}`);
 });
