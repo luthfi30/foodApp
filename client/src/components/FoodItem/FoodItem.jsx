@@ -9,7 +9,7 @@ const FoodItem = ({ id, name, price, description, image }) => {
     <div className="food-item">
         <img
         className="food-item-image"
-        src={assets[image]} // Menggunakan key image dari props
+        src={image} // Menggunakan key image dari props
         alt={name}
       />
       <div className="food-item-img-container">
