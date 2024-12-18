@@ -7,9 +7,7 @@ const FoodItem = ({ id, name, price, description, image }) => {
     
   return (
     <div className="food-item">
-       console.log(`assets/${image}`);  // Melihat path yang digunakan
-<img className="food-item-image" src={`/assets/${image}`} alt={name} />
-
+      <img className="food-item-image" src={assets[image]} alt={name} />
       <div className="food-item-img-container">
         {!cartItems?.[id] ? (
           <img className="add" onClick={() => addToCart(id)} src={assets.add_icon_white} alt="" />
